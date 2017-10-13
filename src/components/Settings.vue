@@ -12,7 +12,7 @@ import CustomToolbar from './CustomToolbar'
 
 export default {
   name: 'Settings',
-  props: ['toggleMenu', 'openSide'],
+  props: ['openSide'],
   components: {
     'custom-toolbar': CustomToolbar
   },

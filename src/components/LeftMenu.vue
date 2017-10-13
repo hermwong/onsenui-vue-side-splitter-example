@@ -22,7 +22,6 @@ import Settings from './Settings'
 
 export default {
   name: 'LeftMenu',
-  props: ['title', 'action'],
   components: {
     home: Home,
     news: News,
