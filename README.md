@@ -1,8 +1,8 @@
-# vue-onsenui + vue-router
+# OnsenUI Vue Side Splitter Example
 
-> A Vue.js project
+Based off of the OnsenUI Vue `<v-ons-splitter-side>` tutorial: https://onsen.io/v2/api/vue/v-ons-splitter-side.html.
 
-For a Vuex version, check out [`vuex` branch](https://github.com/frandiox/onsenui-vue-router/tree/vuex).
+This example will move the page components into their own `.vue` files.
 
 ## Build Setup
 
