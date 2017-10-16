@@ -12,17 +12,10 @@
 <script>
 export default {
   name: 'CustomToolbar',
-  props: ['title', 'openSide'],
-  data() {
-    return {
-      isOpen: this.openSide
-    }
-  },
+  props: ['title'],
   methods: {
     action() {
-      // need to toggle the value of openSide in LeftMenu
-      this.isOpen = !this.isOpen;
-      this.$emit('menuToggled', [this.isOpen]);
+      this.$emit('menuToggled');
     }
   }
 }

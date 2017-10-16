@@ -1,6 +1,6 @@
 <template>
   <v-ons-splitter>
-    <v-ons-splitter-side swipeable width="150px" collapse"" side="left" :open.sync="openSide">
+    <v-ons-splitter-side swipeable width="150px" collapse"" side="left" :open.sync="openSide" :animation="$ons.platform.isAndroid() ? 'overlay' : 'reveal'">
       <v-ons-page>
         <v-ons-list>
           <v-ons-list-item v-for="page in pages" tappable modifier="chevron" @click="currentPage = page; openSide = false">
@@ -10,7 +10,7 @@
       </v-ons-page>
     </v-ons-splitter-side>
     <v-ons-splitter-content>
-      <component :is="currentPage" :openSide="openSide" v-on:menuToggled="sideMenu"></component>
+      <component :is="currentPage" v-on:menuToggled="sideMenu"></component>
     </v-ons-splitter-content>
   </v-ons-splitter>
 </template>
@@ -35,10 +35,10 @@ export default {
     }
   },
   methods: {
-    sideMenu(isOpen) {
+    sideMenu() {
       console.log('toggleMenu handled');
-      this.openSide = isOpen;
-      console.log('openSide: ' + this.openSide);
+      this.openSide = !this.openSide;
+      console.log(this.openSide);
     }
   }
 }
