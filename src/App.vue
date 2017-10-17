@@ -1,45 +1,43 @@
 <template>
   <v-ons-splitter>
-    <v-ons-splitter-side swipeable width="150px" collapse"" side="left" :open.sync="openSide" :animation="$ons.platform.isAndroid() ? 'overlay' : 'reveal'">
+    <v-ons-splitter-side
+      swipeable width="150px" collapse="" side="left"
+      :open.sync="openSide"
+    >
       <v-ons-page>
         <v-ons-list>
-          <v-ons-list-item v-for="page in pages" tappable modifier="chevron" @click="currentPage = page; openSide = false">
+          <v-ons-list-header>Menu</v-ons-list-header>
+          <v-ons-list-item v-for="page in pages" tappable modifier="chevron"
+            @click="currentPage = page; openSide = false"
+          >
             <div class="center">{{ page }}</div>
           </v-ons-list-item>
         </v-ons-list>
       </v-ons-page>
     </v-ons-splitter-side>
+
     <v-ons-splitter-content>
-      <component :is="currentPage" v-on:menuToggled="sideMenu"></component>
+      <div :is="currentPage" :toggle-menu="() => openSide = !openSide"></div>
     </v-ons-splitter-content>
   </v-ons-splitter>
 </template>
 
 <script>
-import Home from './components/Home'
-import News from './components/News'
-import Settings from './components/Settings'
-
-export default {
-  name: 'app',
-  components: {
-    home: Home,
-    news: News,
-    settings: Settings
-  },
-  data() {
-    return {
-      currentPage: 'home',
-      pages: ['home', 'news', 'settings'],
-      openSide: false
-    }
-  },
-  methods: {
-    sideMenu() {
-      console.log('toggleMenu handled');
-      this.openSide = !this.openSide;
-      console.log(this.openSide);
+  import home from './components/homePage'
+  import news from './components/newsPage'
+  import settings from './components/settingsPage'
+  export default {
+    data() {
+      return {
+        currentPage: 'home',
+        pages: ['home', 'news', 'settings'],
+        openSide: false
+      };
+    },
+    components: {
+      home,
+      news,
+      settings
     }
   }
-}
 </script>
