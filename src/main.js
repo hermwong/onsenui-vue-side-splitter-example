@@ -6,12 +6,16 @@ import VueOnsen from 'vue-onsenui';
 require('onsenui/css-components-src/src/onsen-css-components.css');
 require('onsenui/css/onsenui.css');
 
-import App from './App.vue';
+import router from './router'
+router.afterEach((to, from) => {
+  console.log('from', from);
+  console.log('to', to);
+})
 
 Vue.use(VueOnsen);
 
 new Vue({
   el: '#app',
-  template: '<app></app>',
-  components:{App}
+  router,
+  template: '<router-view></router-view>'
  });

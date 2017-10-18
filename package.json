@@ -1,8 +1,8 @@
 {
-  "name": "onsenui-vue-router",
+  "name": "vue-router-example",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Fran Dios <me@frandiox.com>",
+  "author": "Herm Wong",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -14,7 +14,6 @@
   "dependencies": {
     "onsenui": "~2.5.1",
     "vue": "^2.4.0",
-    "vue-loader": "^12.1.0",
     "vue-onsenui": "~2.1.0",
     "vue-router": "^2.7.0"
   },
