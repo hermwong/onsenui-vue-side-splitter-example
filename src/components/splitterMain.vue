@@ -49,11 +49,11 @@
     methods: {
       openPage: function(page, title) {
         if (page === '') {
-          if (this.$route.path === '/splitterMain') {
+          if (this.$route.path === '/') {
             return;
           }
           this.pageTitle = 'Home';
-          this.$router.push({ path: '/splitterMain' });
+          this.$router.push({ path: '/' });
         }
         else {
           this.pageTitle = title;
