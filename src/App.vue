@@ -1,43 +1,43 @@
 <template>
-  <v-ons-splitter>
-    <v-ons-splitter-side
-      swipeable width="150px" collapse="" side="left"
-      :open.sync="openSide"
-    >
-      <v-ons-page>
-        <v-ons-list>
-          <v-ons-list-header>Menu</v-ons-list-header>
-          <v-ons-list-item v-for="page in pages" tappable modifier="chevron"
-            @click="currentPage = page; openSide = false"
-          >
-            <div class="center">{{ page }}</div>
-          </v-ons-list-item>
-        </v-ons-list>
-      </v-ons-page>
-    </v-ons-splitter-side>
-
-    <v-ons-splitter-content>
-      <div :is="currentPage" :toggle-menu="() => openSide = !openSide"></div>
-    </v-ons-splitter-content>
-  </v-ons-splitter>
+  <v-ons-navigator swipeable swipe-target-width="50px"
+    :page-stack="pageStack"
+    :pop-page="storePop"
+    :options="options"
+    @postpush="showPopTip"
+  ></v-ons-navigator>
 </template>
 
 <script>
-  import home from './components/homePage'
-  import news from './components/newsPage'
-  import settings from './components/settingsPage'
-  export default {
-    data() {
-      return {
-        currentPage: 'home',
-        pages: ['home', 'news', 'settings'],
-        openSide: false
-      };
+import AppSplitter from './components/AppSplitter';
+
+export default {
+  beforeCreate() {
+    this.$store.commit('navigator/push', AppSplitter);
+  },
+  data() {
+    return {
+      shutUp: this.md
+    }
+  },
+  computed: {
+    pageStack() {
+      return this.$store.state.navigator.stack;
     },
-    components: {
-      home,
-      news,
-      settings
+    options() {
+      return this.$store.state.navigator.options;
+    }
+  },
+  methods: {
+    storePop() {
+      this.$store.commit('navigator/pop');
+    },
+    showPopTip() {
+      !this.shutUp && this.$ons.notification.toast({
+        message: 'Try swipe-to-pop from left side!',
+        buttonLabel: 'Shut up!',
+        timeout: 2000
+      }).then(i => this.shutUp = i === 0);
     }
   }
+};
 </script>
