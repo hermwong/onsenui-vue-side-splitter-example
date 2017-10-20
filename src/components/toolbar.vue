@@ -11,6 +11,6 @@
 
 <script>
 export default {
-  props: ['title', 'backLabel']
+  props: ['title']
 };
 </script>
