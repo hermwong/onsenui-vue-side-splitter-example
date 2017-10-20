@@ -43,6 +43,7 @@ export default {
       tabs: [
         {
           title: 'Home',
+          label: 'Home',
           icon: 'ion-home, material:md-home',
           page: Home,
           theme: red,
