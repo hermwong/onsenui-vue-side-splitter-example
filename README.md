@@ -4,6 +4,14 @@ Based off of the OnsenUI Vue `<v-ons-splitter-side>` tutorial: https://onsen.io/
 
 This example will move the page components into their own `.vue` files.
 
+This repository demonstrates 3 different methods of implenting the OnsenUI + Vue Side Splitter.
+
+1. The `using-function-property` branch demonstrates the side splitter by using a function as a property of the `side-splitter-content` component.
+
+2. The `vue-router` branch demonstrates the side splitter by using OnsenUI's `vue-router` wrapper.
+
+3. The `vuex` branch demonstrates the side splitter by using VueX to manage the state of the side splitter. The state persists from the menu and the tab bar component.
+
 ## Build Setup
 
 ``` bash
