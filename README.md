@@ -22,7 +22,7 @@ npm run build --report
 
 ## Deploy
 
-If you've never deployed the app to Firebase then perform steps 1 & 2, if you've already deployed the app before skipt to Step 3.
+If you've never deployed the app to Firebase perform Steps 1 & 2, if you've already deployed the app before go directly to Step 3.
 
 1. link your local machine to Firebase
 `npm run login`
