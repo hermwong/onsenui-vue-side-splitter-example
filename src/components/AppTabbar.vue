@@ -47,7 +47,6 @@ export default {
           icon: 'ion-home, material:md-home',
           page: Home,
           theme: red,
-          style: { maxWidth: '50px' },
           top: -105 // Toolbar + Tabbar heights
         },
         {
