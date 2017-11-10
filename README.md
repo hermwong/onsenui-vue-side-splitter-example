@@ -20,4 +20,17 @@ npm run build
 npm run build --report
 ```
 
+## Deploy
+
+If you've never deployed the app to Firebase then perform steps 1 & 2, if you've already deployed the app before skipt to Step 3.
+
+1. link your local machine to Firebase
+`npm run login`
+
+2. initialize Firebase to host the app
+`npm run init`
+
+3. deploy the app to Firebase
+`npm run deploy`
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
